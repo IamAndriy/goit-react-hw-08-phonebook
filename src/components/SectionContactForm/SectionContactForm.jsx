@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "../../redux/operations";
-import { selectContacts } from "../../redux/selectors";
+import { addContact } from "../../redux/contacts/operations";
+import { selectContacts } from "../../redux/contacts/selectors";
 import { toast } from "react-toastify";
 import css from "./SectionContactForm.module.css";
 
@@ -22,10 +22,7 @@ export const SectionContactForm = () => {
                                                                  ariaLabel: 'The contact is elready existing', 
                                                                  className: `${css.error}`});
         } else {
-            dispatch(addContact({name, phone}));
-            toast(`The contact <${name} , ${phone}> was added to the book`, { closeButton: false, 
-                                                                               ariaLabel: 'The contact was added to the book', 
-                                                                               className: `${css.success}`});
+            dispatch(addContact({name, "number" : phone}));
         }
 
         form.reset();

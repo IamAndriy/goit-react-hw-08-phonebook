@@ -27,7 +27,11 @@
 
     @media screen and (max-width: 549.8px){
         width: calc(100% - 35px);
+        padding: 3px 25px 3px 10px;
     }
+
+
+
 }
 .massage{
     margin-bottom: 20px;

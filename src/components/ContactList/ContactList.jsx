@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectFilter, selectRelevantContacts } from "../../redux/selectors";
+import { selectFilter, selectRelevantContacts } from "../../redux/contacts/selectors";
 import { ContactItem } from "../ContactItem/ContactItem";
 import { nanoid } from "nanoid";
 import css from "./ContactList.module.css";
@@ -12,7 +12,7 @@ export const ContactList = () => {
     return  <> 
             { (contacts.length > 0) 
                 ?   <ul className={css["contact-list"]}>
-                        { contacts.map( ({id, name, phone}) => < ContactItem key={nanoid()} id={id} name={name} number={phone}/> ) }
+                        { contacts.map( ({id, name, number}) => < ContactItem key={nanoid()} id={id} name={name} number={number}/> ) }
                     </ul>
                 :   (filter.trim())
                         ? <p className={css.massage}>There are no contacts you are looking for</p>

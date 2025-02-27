@@ -1,6 +1,6 @@
 import { createSlice} from "@reduxjs/toolkit";
 import { getContacts, addContact, deleteContact } from "./operations";
-
+import { toast } from "react-toastify";
 
 const contactsSlice = createSlice({
     name: "contacts",
@@ -34,15 +34,29 @@ function handleFulfilledGet (state, action){
     state.error = null;
     state.items = [...action.payload];
 }
-function handleFulfilledAdd (state, action){ 
+function handleFulfilledAdd (state, action){
+
     state.isLoading = false; 
     state.error = null;
     state.items= [...state.items, action.payload];
+
+    toast(`The contact <${action.payload.name} , ${action.payload.number}> was added to the book`, { closeButton: false, 
+                                                                                                     ariaLabel: 'The contact was added to the book', 
+                                                                                                     className: 'success',
+                                                                                                     autoClose: 2000,
+                                                                                                   });
 }
 function handleFulfilledDelete (state, action){ 
+    
     state.isLoading = false; 
     state.error = null;
     state.items = state.items.filter(item => item.id !== action.payload.id);
+
+    toast(`The contact < ${action.payload.name} , ${action.payload.number} > was deleted from the book`, {closeButton: false, 
+                                                                                                          ariaLabel: 'The contact was deleted from the book', 
+                                                                                                          className: 'delSuccess',
+                                                                                                          autoClose: 1000}
+    );
 }
 //----------------------------------------------------------------
 

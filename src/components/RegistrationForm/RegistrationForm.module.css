@@ -1,0 +1,39 @@
+.form {
+  padding: 15px;
+  max-width: 460px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label{
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.regInput{
+  width: 100%;
+  padding: 5px 10px;
+  margin-top: 5px;
+  border: none;
+  /* box-shadow: 2px 2px 3px var(--header-background); */
+}
+
+.button{
+  display: block;
+  padding: 5px 15px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+
+  &:hover{
+    background-color: var(--btn-hover);
+    cursor: pointer;
+  }
+}
+.massage{
+  font-size: 12px;
+  color: var(--active-nav-link);
+}

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setFilter } from "../../redux/filterSlice";
+import { setFilter } from "../../redux/contacts/filterSlice";
 import {ImSearch} from 'react-icons/im';
 import css from "./Filter.module.css";
 
